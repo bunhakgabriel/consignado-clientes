@@ -1,0 +1,118 @@
+.formulario {
+    font-family: sans-serif;
+    margin-left: 270px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    width: 90%;
+}
+
+.sectionTitle {
+    background-color: #ede9fe;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    h3 {
+        color: #6b21a8;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+
+}
+
+form {
+    .container_form {
+        max-height: 70vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        >div {
+            display: flex;
+            gap: 20px;
+        }
+    }
+
+    .buttons {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+
+        .button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .resetForm {
+            border: 1px solid #d1d5db;
+            color: #374151;
+            background-color: white;
+        }
+
+        .resetForm:hover {
+            background-color: #f3f4f6;
+        }
+
+        .submitButton {
+            background-color: #9333ea;
+            color: white;
+        }
+
+        .submitButton:hover {
+            background-color: #7e22ce;
+        }
+
+    }
+
+}
+
+.uma_coluna>div {
+    width: 94%;
+}
+
+.duas_colunas>div {
+    width: 46%;
+}
+
+.tres_colunas>div {
+    width: 30%;
+}
+
+.container_input {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.input,
+.select,
+.text_area {
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 10px 4px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+
+.edit_form {
+    width: 800px;
+    height: 550px;
+    margin-left: 0;
+}

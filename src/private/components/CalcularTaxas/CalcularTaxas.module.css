@@ -1,0 +1,146 @@
+.calcular_taxas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin-left: 270px;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px;
+    transition: all 0.3s ease;
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon {
+    color: #4F46E5;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1F2937;
+    margin: 0;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #4B5563;
+    font-weight: 500;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    padding-left: 2rem;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    color: #1F2937;
+    background: #F9FAFB;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #4F46E5;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.input::placeholder {
+    color: #9CA3AF;
+}
+
+.currencySymbol,
+.percentageSymbol {
+    position: absolute;
+    color: #6B7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.currencySymbol {
+    left: 0.75rem;
+}
+
+.percentageSymbol {
+    right: 0.75rem;
+}
+
+.resultContainer {
+    background: #F8FAFC;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.resultHeader {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.resultValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.currencyIndicator {
+    font-size: 1.25rem;
+    color: #4F46E5;
+    font-weight: 500;
+}
+
+.amount {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4F46E5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .amount {
+        font-size: 1.75rem;
+    }
+}

@@ -1,0 +1,109 @@
+.dialog_login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-family: sans-serif;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .open {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .modal {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 28rem;
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+  }
+  
+  .closeButton:hover {
+    color: #374151;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logoContainer {
+    color: #f43f5e;
+    margin-bottom: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+  }
+  
+  .mainContent {
+    width: 100%;
+  }
+  
+  .text {
+    text-align: center;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .googleButton {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .googleButton:hover {
+    background-color: #f9fafb;
+  }
+  
+  .googleIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .helpLink {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  
+  .helpLink:hover {
+    color: #2563eb;
+  }

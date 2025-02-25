@@ -1,0 +1,90 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: sans-serif;
+  }
+  
+  .modal {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 95vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .closeButton:hover {
+    color: #333;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0px;
+    color: #333;
+  }
+  
+  .section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .field {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .label {
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .value {
+    color: #333;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    color: #666;
+    align-items: center;
+
+    .close, .impressao{
+      cursor: pointer;
+    }
+
+  }
+
+  @media print {
+    .field {
+        margin-block: 12px; /* Ajuste o espaçamento vertical para impressão */
+        page-break-inside: avoid; /* Evita quebras de página no meio das informações */
+    }
+
+    .buttons {
+        display: none !important; /* Oculta os botões na impressão */
+    }
+
+    .modal {
+        width: 100%; /* Garante que a largura ocupe a página inteira */
+        max-width: none;
+    }
+}
