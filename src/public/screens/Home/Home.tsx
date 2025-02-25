@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export const Home = () => {
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
     useEffect(() => {

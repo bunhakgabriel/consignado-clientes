@@ -1,19 +1,11 @@
 import { Home } from "./screens/Home/Home";
-import { Registro } from "./screens/Registro/Registro";
-import { Login } from "./screens/Login/Login";
 import { App } from "./App";
 import { Dashboard } from "../private/screens/Dashboard/Dashboard";
 import { CalcularTaxas } from "../private/components/CalcularTaxas/CalcularTaxas";
 import { Formulario } from "../private/components/Formulario/Formulario";
 import GridClientes from "../private/components/GridClientes/GridClientes";
+import { RouteObject } from "react-router-dom";
 
-type RouteObject = {
-    index?: boolean;
-    path?: string;
-    element: React.ReactNode;
-    errorElement?: React.ReactNode;
-    children?: RouteObject[];
-};
 
 const routes: RouteObject[] = [
     {
@@ -23,14 +15,6 @@ const routes: RouteObject[] = [
             {
                 index: true,
                 element: <Home />
-            },
-            {
-                path: "login",
-                element: <Login />
-            },
-            {
-                path: "registro",
-                element: <Registro />
             }
         ],
         errorElement: <h1>Página não encontrada</h1>

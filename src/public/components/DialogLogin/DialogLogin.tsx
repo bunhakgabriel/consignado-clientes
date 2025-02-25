@@ -16,7 +16,7 @@ function DialogLogin() {
     const { setShowDialog, showDialog } = DialogLoginStore();
     const [isAnimating, setIsAnimating] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     useEffect(() => {
         if (showDialog) {
