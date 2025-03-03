@@ -5,13 +5,13 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import styles from './GridClientes.module.css';
 import { UsuarioStore } from '../../../store/idUsuario';
-import { deleteCliente, getCliente } from '../../service/cliente';
 import { Cliente } from '../../../models/Cliente';
 import { IoIosSearch } from 'react-icons/io';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import ClientModal from '../ClienteModal/ClientModal';
 import { FaRegEye } from 'react-icons/fa6';
 import { Formulario } from '../Formulario/Formulario';
+import useCliente from '../../hooks/cliente';
 
 interface ActionButtonsProps extends ICellRendererParams {
     onViewClient: (client: Cliente) => void;
@@ -19,6 +19,8 @@ interface ActionButtonsProps extends ICellRendererParams {
 }
 
 const ActionButtons = (props: ActionButtonsProps) => {
+    const { delet } = useCliente();
+
     const onView = () => {
         props.onViewClient(props.data);
     };
@@ -26,7 +28,7 @@ const ActionButtons = (props: ActionButtonsProps) => {
     const onDelete = async () => {
         try {
             if(!window.confirm('Deseja deletar esse cliente? Essa ação não pode ser desfeita.')) return
-            await deleteCliente(props.data);
+            await delet(props.data);
             window.location.reload();
         } catch (e) {
             alert('Erro ao deletar cliente! Tente novamente.')
@@ -73,11 +75,12 @@ const DataGrid: React.FC = () => {
     const [editClient, setEditClient] = useState<Cliente | null>(null);
 
     const { idUsuario } = UsuarioStore();
+    const { get } = useCliente();
 
     useEffect(() => {
         const fetchClientes = async () => {
             const id = idUsuario || JSON.parse(localStorage.getItem("idUsuario") || '');
-            const data: Cliente[] = await getCliente(id);
+            const data: Cliente[] = await get(id);
             setRowData(data);
         }
         fetchClientes();

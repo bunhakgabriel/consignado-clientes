@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { Cliente } from '../../../models/Cliente';
 import styles from './Formulario.module.css';
-import { postCliente, updateCliente } from '../../service/cliente';
 import { UsuarioStore } from '../../../store/idUsuario';
+import useCliente from '../../hooks/cliente';
 
 type propsFormulario = {
     editar?: boolean;
@@ -14,6 +14,7 @@ export const Formulario = ({ editar, cliente, cancelar }: propsFormulario) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<Cliente>({
         defaultValues: editar ? cliente : undefined
     });
+    const { update, post } = useCliente();
     const { idUsuario } = UsuarioStore();
     const messageError = 'Campo obrigatório';
 
@@ -22,10 +23,10 @@ export const Formulario = ({ editar, cliente, cancelar }: propsFormulario) => {
         data.idUsuario = idUsuario;
         try {
             if(editar){
-                await updateCliente(data);
+                await update(data);
                 window.location.reload();
             } else {
-                await postCliente(data, reset);
+                await post(data, reset);
             }
         } catch (e) {
             alert('Erro ao cadastrar cliente, aguarde e tente novamente.');
